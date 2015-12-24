@@ -53,13 +53,14 @@ var App = React.createClass({
 
                             {token &&
                             <LinkContainer to="/list">
-                                <NavItem eventKey={4}>List</NavItem>
+                                <NavItem eventKey={3}>List</NavItem>
                             </LinkContainer>}
                         </Nav>
                         <Nav pullRight>
-                            {token && (<NavItem eventKey={3} className="logout-link" onClick={this.handleLogout}>
+                            {token && (<NavItem eventKey={4} className="logout-link" onClick={this.handleLogout}>
                                 Logout
                             </NavItem>)}
+                            <NavItem eventKey={5}>Help</NavItem>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
