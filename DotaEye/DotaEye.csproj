@@ -43,6 +43,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi">
+      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -191,13 +200,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Ioc\DependencyRegistrar.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -221,7 +231,63 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\App\Gruntfile.js" />
+    <Content Include="Scripts\App\src\public\build\assets.json" />
+    <None Include="Scripts\App\src\public\styles\bootstrap\bootstrap.less" />
+    <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\App\src\public\styles\containers\app.less" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\fonts\icomoon.eot" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\fonts\icomoon.ttf" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\fonts\icomoon.woff" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\selection.json" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\style.less" />
+    <Content Include="Scripts\App\src\public\styles\main.less" />
+    <Content Include="Scripts\App\.babelrc" />
+    <Content Include="Scripts\App\.eslintrc" />
+    <Content Include="Scripts\App\package.json" />
+    <Content Include="Scripts\App\README.md" />
+    <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\App\src\actions\auth.js" />
+    <Content Include="Scripts\App\src\actions\order.js" />
+    <Content Include="Scripts\App\src\client.js" />
+    <Content Include="Scripts\App\src\components\index.js" />
+    <Content Include="Scripts\App\src\components\form\LoginForm.js" />
+    <Content Include="Scripts\App\src\configs\index.js" />
+    <Content Include="Scripts\App\src\containers\App.js" />
+    <Content Include="Scripts\App\src\containers\Home.js" />
+    <Content Include="Scripts\App\src\containers\index.js" />
+    <Content Include="Scripts\App\src\containers\List.js" />
+    <Content Include="Scripts\App\src\containers\Login.js" />
+    <Content Include="Scripts\App\src\containers\NotFound.js" />
+    <Content Include="Scripts\App\src\contants\auth.js" />
+    <Content Include="Scripts\App\src\contants\order.js" />
+    <Content Include="Scripts\App\src\middleware\clientMiddleware.js" />
+    <Content Include="Scripts\App\src\middleware\transitionMiddleware.js" />
+    <Content Include="Scripts\App\src\mixins\urlContent.js" />
+    <Content Include="Scripts\App\src\public\images\favicon.ico" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\demo-files\demo.css" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\demo-files\demo.js" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\demo.html" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\fonts\icomoon.svg" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\Read Me.txt" />
+    <Content Include="Scripts\App\src\public\styles\icomoon\style.css" />
+    <Content Include="Scripts\App\src\public\styles\main.css" />
+    <Content Include="Scripts\App\src\reducers\auth.js" />
+    <Content Include="Scripts\App\src\reducers\index.js" />
+    <Content Include="Scripts\App\src\reducers\order.js" />
+    <Content Include="Scripts\App\src\routes.js" />
+    <Content Include="Scripts\App\src\stores\createStore.js" />
+    <Content Include="Scripts\App\src\utils\ApiClient.js" />
+    <Content Include="Scripts\App\src\utils\connectData.js" />
+    <Content Include="Scripts\App\src\utils\env.js" />
+    <Content Include="Scripts\App\src\utils\getDataDependencies.js" />
+    <Content Include="Scripts\App\src\utils\getStatusFromRoutes.js" />
+    <Content Include="Scripts\App\src\utils\makeRouteHooksSafe.js" />
+    <Content Include="Scripts\App\webpack.dev.config.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
@@ -272,6 +338,16 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SQ.Core\SQ.Core\SQ.Core.csproj">
+      <Project>{f65b55f6-3aac-4a20-a38d-b5b6a3d1a321}</Project>
+      <Name>SQ.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotaEye.Data\DotaEye.Data.csproj">
+      <Project>{068dba5a-fe94-40b0-a406-c637f968fb96}</Project>
+      <Name>DotaEye.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

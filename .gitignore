@@ -15,5 +15,5 @@ _[Ss]cripts
 *.ncrunchsolution
 *.dot[Cc]over
 *.pubxml
-OAuth/Scripts/App/node_modules
-OAuth/Scripts/App/.idea
+DotaEye/Scripts/App/node_modules
+DotaEye/Scripts/App/.idea

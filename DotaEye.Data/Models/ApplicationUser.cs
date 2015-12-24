@@ -16,6 +16,12 @@ namespace DotaEye.Data.Models
             return userIdentity;
         }
 
+        public string Avatar { get; set; }
+
+        public bool Sex { get; set; }
+
+        public string PhonePrefix { get; set; }
+
         public virtual ICollection<UserActivities> UserActivities { get; set; }
     }
 }

@@ -10,6 +10,7 @@ using Owin;
 using System;
 using DotaEye.Models;
 using DotaEye.Providers;
+using DotaEye.Data;
 
 namespace DotaEye
 {
@@ -24,7 +25,7 @@ namespace DotaEye
         public void ConfigureAuth(IAppBuilder app)
         {
             // 将数据库上下文和用户管理器配置为对每个请求使用单个实例
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
+            app.CreatePerOwinContext(AppContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
 
             // 使应用程序可以使用 Cookie 来存储已登录用户的信息

@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using DotaEye.Models;
 using DotaEye.Providers;
 using DotaEye.Results;
+using DotaEye.Data.Models;
 
 namespace DotaEye.Controllers
 {
@@ -25,6 +26,8 @@ namespace DotaEye.Controllers
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
+
+        public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
         public AccountController()
         {
@@ -49,7 +52,7 @@ namespace DotaEye.Controllers
             }
         }
 
-        public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
+       
 
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
@@ -329,7 +332,10 @@ namespace DotaEye.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() {
+                UserName = model.Email,
+                Email = model.Email
+            };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 

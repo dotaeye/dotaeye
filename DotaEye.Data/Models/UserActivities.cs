@@ -11,9 +11,9 @@ namespace DotaEye.Data.Models
     public partial class UserActivities : BaseEntity
     {
         public System.DateTime Time { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public UserActivityType Type { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }
