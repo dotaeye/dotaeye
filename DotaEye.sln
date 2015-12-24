@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaEye", "DotaEye\DotaEye.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQ.Core", "..\SQ.Core\SQ.Core\SQ.Core.csproj", "{F65B55F6-3AAC-4A20-A38D-B5B6A3D1A321}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaEye.Data", "DotaEye.Data\DotaEye.Data.csproj", "{068DBA5A-FE94-40B0-A406-C637F968FB96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F65B55F6-3AAC-4A20-A38D-B5B6A3D1A321}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F65B55F6-3AAC-4A20-A38D-B5B6A3D1A321}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F65B55F6-3AAC-4A20-A38D-B5B6A3D1A321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068DBA5A-FE94-40B0-A406-C637F968FB96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{068DBA5A-FE94-40B0-A406-C637F968FB96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{068DBA5A-FE94-40B0-A406-C637F968FB96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{068DBA5A-FE94-40B0-A406-C637F968FB96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
