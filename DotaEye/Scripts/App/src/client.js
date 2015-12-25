@@ -6,6 +6,7 @@ import { Router } from 'react-router';
 import { Provider } from 'react-redux';
 import { createHashHistory, useBasename } from 'history'
 import { syncReduxAndRouter } from 'redux-simple-router'
+import { DevTools } from './containers';
 import createRoutes from './routes'
 import createStore from './stores/createStore'
 import ApiClient from './utils/ApiClient';
@@ -14,6 +15,7 @@ import sessionStorage from './utils/sessionStorage';
 import configs from './configs';
 import { loadAuthToken } from './actions/auth';
 import 'antd/lib/index.css';
+
 
 sessionStorage.setNamespace('oath');
 
@@ -39,7 +41,10 @@ let firstRender = true;
 
 ReactDOM.render(
     <Provider store={store} key="provider">
-        <Router routes={routes} history={history} onUpdate={UpdateRoute}/>
+        <div>
+            <Router routes={routes} history={history} onUpdate={UpdateRoute}/>
+            <DevTools/>
+        </div>
     </Provider>,
     document.getElementById('main')
 );

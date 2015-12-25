@@ -19,7 +19,7 @@ var App = React.createClass({
             this.history.pushState(null, '/list');
         } else if (this.props.auth.token && !nextProps.auth.token) {
             // logout
-            this.history.pushState(null, '/');
+            this.history.pushState(null, '/login');
         }
     },
 

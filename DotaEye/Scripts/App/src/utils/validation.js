@@ -14,10 +14,10 @@ export function required(value) {
     }
 }
 
-export function equalTo(compareValue) {
-    return value=> {
-        if (value !== compareValue) {
-            return `The password and confirmation password do not match.`
+export function equalTo(comparefield, errorMessage) {
+    return (value, data)=> {
+        if (value !== data[comparefield]) {
+            return errorMessage ? errorMessage : `The password and confirmation password do not match.`
         }
     }
 }

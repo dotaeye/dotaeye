@@ -20,7 +20,7 @@ const Register = React.createClass({
         return (
             <div id="register" className='container'>
                 <h1>Register Page</h1>
-                <RegisterForm onSubmit={this.onSubmit} submitting={registering} ref='registerForm'/>
+                <RegisterForm onSubmit={this.onSubmit} submitting={registering} formError={registerError} ref='registerForm'/>
             </div>
         );
     }

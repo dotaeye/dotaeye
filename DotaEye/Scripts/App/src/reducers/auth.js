@@ -26,11 +26,17 @@ export default function auth(state = initialState, action = {}) {
                 error: action.error
             };
         case authTypes.LOAD_AUTH_TOKEN:
+            let token = action.result;
+            if (token) {
+                if (new Date(token['.expires']).getTime() < new Date().getTime()) {
+                    token = null;
+                }
+            }
             return {
                 ...state,
                 loading: false,
                 loaded: true,
-                token: action.result
+                token: token
             };
         case authTypes.REGISTER:
             return {

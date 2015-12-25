@@ -5,7 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 export default class Home extends Component {
     render() {
         return (
-            <div id="home" >
+            <div id="home" className='container' >
                 <h1>Home Page</h1>
             </div>
         );

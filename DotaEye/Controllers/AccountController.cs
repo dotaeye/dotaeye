@@ -52,7 +52,7 @@ namespace DotaEye.Controllers
             }
         }
 
-       
+
 
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
@@ -117,6 +117,25 @@ namespace DotaEye.Controllers
                 ExternalLoginProviders = GetExternalLogins(returnUrl, generateState)
             };
         }
+        // GET api/Account/validateEmail?email=
+        [AllowAnonymous]
+        [Route("validateEmail")]
+        [HttpGet]
+        public async Task<bool> validateEmail(string email)
+        {
+            IdentityUser user = await UserManager.FindByEmailAsync(email);
+
+            if (user == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
 
         // POST api/Account/ChangePassword
         [Route("ChangePassword")]
@@ -332,7 +351,8 @@ namespace DotaEye.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() {
+            var user = new ApplicationUser()
+            {
                 UserName = model.Email,
                 Email = model.Email
             };

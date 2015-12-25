@@ -3,7 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { Spin } from 'antd';
 import connectData from '../utils/connectData'
-import * as actionCreators from '../actions/order'
+import * as orderActions from '../actions/order'
+import * as authActions from '../actions/auth'
 
 var List = React.createClass({
 
@@ -21,7 +22,6 @@ var List = React.createClass({
                             return (
                                 <li key={index}>
                                     <span>{order.id}</span>
-
                                     <div>{order.customerName}</div>
                                 </li>
                             )
@@ -48,15 +48,15 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return {actions: bindActionCreators(actionCreators, dispatch)}
+    return {actions: bindActionCreators(orderActions, dispatch)}
 }
 
 function fetchData(dispatch, getState, params, query) {
-    return dispatch(actionCreators.load())
-        .then(()=> {
-            let orderId = getState().order.list[0].orderID;
-            dispatch(actionCreators.loadOrderById(orderId))
-        });
+    dispatch(authActions.loadAuthToken(getState().auth.token));
+    return dispatch(orderActions.load()).then(()=> {
+        let orderId = getState().order.list[0].orderID;
+        dispatch(orderActions.loadOrderById(orderId))
+    });
 }
 
 

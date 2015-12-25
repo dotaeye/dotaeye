@@ -21,9 +21,7 @@ const Login = React.createClass({
         return (
             <div id="login" className='container'>
                 <h1>Login Page</h1>
-
                 <LoginForm onSubmit={this.onSubmit} submitting={loggingIn} ref='loginForm'/>
-
             </div>
         );
     }
