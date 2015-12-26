@@ -17,3 +17,5 @@ _[Ss]cripts
 *.pubxml
 DotaEye/Scripts/App/node_modules
 DotaEye/Scripts/App/.idea
+DotaEye/Data.config
+DotaEye/Scripts/App/src/public/build/js

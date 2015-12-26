@@ -215,25 +215,18 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Scripts\App\Gruntfile.js" />
     <Content Include="Scripts\App\src\public\build\assets.json" />
+    <Content Include="Data.config" />
+    <None Include="Properties\PublishProfiles\FtpDotaeye.pubxml" />
     <None Include="Scripts\App\src\public\styles\bootstrap\bootstrap.less" />
+    <Content Include="Scripts\App\src\public\build\js\common.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\App\src\public\build\js\main.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\App\src\public\styles\containers\app.less" />
     <Content Include="Scripts\App\src\public\styles\icomoon\fonts\icomoon.eot" />
@@ -242,32 +235,10 @@
     <Content Include="Scripts\App\src\public\styles\icomoon\selection.json" />
     <Content Include="Scripts\App\src\public\styles\icomoon\style.less" />
     <Content Include="Scripts\App\src\public\styles\main.less" />
-    <Content Include="Scripts\App\.babelrc" />
-    <Content Include="Scripts\App\.eslintrc" />
-    <Content Include="Scripts\App\package.json" />
-    <Content Include="Scripts\App\README.md" />
     <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Scripts\App\src\public\styles\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Scripts\App\src\actions\auth.js" />
-    <Content Include="Scripts\App\src\actions\order.js" />
-    <Content Include="Scripts\App\src\client.js" />
-    <Content Include="Scripts\App\src\components\index.js" />
-    <Content Include="Scripts\App\src\components\form\LoginForm.js" />
-    <Content Include="Scripts\App\src\configs\index.js" />
-    <Content Include="Scripts\App\src\containers\App.js" />
-    <Content Include="Scripts\App\src\containers\Home.js" />
-    <Content Include="Scripts\App\src\containers\index.js" />
-    <Content Include="Scripts\App\src\containers\List.js" />
-    <Content Include="Scripts\App\src\containers\Login.js" />
-    <Content Include="Scripts\App\src\containers\NotFound.js" />
-    <Content Include="Scripts\App\src\contants\auth.js" />
-    <Content Include="Scripts\App\src\contants\order.js" />
-    <Content Include="Scripts\App\src\middleware\clientMiddleware.js" />
-    <Content Include="Scripts\App\src\middleware\transitionMiddleware.js" />
-    <Content Include="Scripts\App\src\mixins\urlContent.js" />
     <Content Include="Scripts\App\src\public\images\favicon.ico" />
     <Content Include="Scripts\App\src\public\styles\icomoon\demo-files\demo.css" />
     <Content Include="Scripts\App\src\public\styles\icomoon\demo-files\demo.js" />
@@ -275,35 +246,9 @@
     <Content Include="Scripts\App\src\public\styles\icomoon\fonts\icomoon.svg" />
     <Content Include="Scripts\App\src\public\styles\icomoon\Read Me.txt" />
     <Content Include="Scripts\App\src\public\styles\icomoon\style.css" />
-    <Content Include="Scripts\App\src\public\styles\main.css" />
-    <Content Include="Scripts\App\src\reducers\auth.js" />
-    <Content Include="Scripts\App\src\reducers\index.js" />
-    <Content Include="Scripts\App\src\reducers\order.js" />
-    <Content Include="Scripts\App\src\routes.js" />
-    <Content Include="Scripts\App\src\stores\createStore.js" />
-    <Content Include="Scripts\App\src\utils\ApiClient.js" />
-    <Content Include="Scripts\App\src\utils\connectData.js" />
-    <Content Include="Scripts\App\src\utils\env.js" />
-    <Content Include="Scripts\App\src\utils\getDataDependencies.js" />
-    <Content Include="Scripts\App\src\utils\getStatusFromRoutes.js" />
-    <Content Include="Scripts\App\src\utils\makeRouteHooksSafe.js" />
-    <Content Include="Scripts\App\webpack.dev.config.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-2.1.4.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\App\src\public\styles\main.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

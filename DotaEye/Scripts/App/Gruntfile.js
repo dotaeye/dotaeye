@@ -95,8 +95,8 @@ module.exports = function (grunt) {
                 entry: './src/client.js',
                 output: {
                     path: '<%= project.build %>/js',
-                    filename: '[name].[chunkhash].min.js',
-                    chunkFilename: '[name].[chunkhash].min.js'
+                    filename: '[name].min.js',
+                    chunkFilename: '[name].min.js'
                 },
                 module: {
                     loaders: [
@@ -129,7 +129,7 @@ module.exports = function (grunt) {
                     // These are performance optimizations for your bundles
                     new webpack.optimize.DedupePlugin(),
                     new webpack.optimize.OccurenceOrderPlugin(),
-                    new webpack.optimize.CommonsChunkPlugin('common.[hash].min.js', 2),
+                    new webpack.optimize.CommonsChunkPlugin('common.min.js', 2),
                     new webpack.optimize.UglifyJsPlugin({
                         compress: {
                             warnings: false
