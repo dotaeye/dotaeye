@@ -34,6 +34,17 @@ namespace DotaEye.Models
         public string LoginProvider { get; set; }
     }
 
+    public class UserProfile
+    {
+        public string Avatar { get; set; }
+
+        public string Sex { get; set; }
+
+        public DateTime Birthday { get; set; }
+
+        public string UserId { get; set; }
+    }
+
     public class UserLoginInfoViewModel
     {
         public string LoginProvider { get; set; }

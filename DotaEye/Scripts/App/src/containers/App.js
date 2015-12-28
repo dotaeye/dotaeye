@@ -60,7 +60,12 @@ var App = React.createClass({
                             {token && (<NavItem eventKey={4} className="logout-link" onClick={this.handleLogout}>
                                 Logout
                             </NavItem>)}
-                            <NavItem eventKey={5}>Help</NavItem>
+                            {token && (
+                                <LinkContainer to="/profile">
+                                    <NavItem eventKey={5} className="profile-link">
+                                        Profile
+                                    </NavItem>
+                                </LinkContainer>)}
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

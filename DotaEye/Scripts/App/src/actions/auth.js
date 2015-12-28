@@ -1,13 +1,23 @@
 import * as authTypes from '../contants/auth';
 import configs from '../configs'
 
-export function load() {
+export function loadProfile() {
     return {
-        types: [authTypes.LOAD_SESSION, authTypes.LOAD_SESSION_SUCCESS, authTypes.LOAD_SESSION_FAIL],
-        promise: (client) => client.get('/user')
+        types: [authTypes.LOAD_PROFILE, authTypes.LOAD_PROFILE_SUCCESS, authTypes.LOAD_PROFILE_FAIL],
+        promise: (client) => client.get('/account/profile', {
+            token: true,
+        })
     };
 }
-
+export function saveProfile(data) {
+    return {
+        types: [authTypes.SAVE_PROFILE, authTypes.SAVE_PROFILE_SUCCESS, authTypes.SAVE_PROFILE_FAIL],
+        promise: (client) => client.post('/account/profile', {
+            token: true,
+            data: data
+        })
+    };
+}
 
 export function register(data) {
     return {

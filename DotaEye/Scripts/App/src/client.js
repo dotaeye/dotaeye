@@ -16,8 +16,7 @@ import configs from './configs';
 import { loadAuthToken } from './actions/auth';
 import 'antd/lib/index.css';
 
-
-sessionStorage.setNamespace('oath');
+sessionStorage.setNamespace('dotaeye');
 
 //const history = useBasename(createHistory)({
 //    basename: '/App'
@@ -37,17 +36,26 @@ store.dispatch(loadAuthToken(token))
 
 const routes = createRoutes(store);
 
-let firstRender = true;
-
-ReactDOM.render(
-    <Provider store={store} key="provider">
-        <div>
+if (configs.product) {
+    window.React = React; // enable debugger
+    ReactDOM.render(
+        <Provider store={store} key="provider">
             <Router routes={routes} history={history} onUpdate={UpdateRoute}/>
-            <DevTools/>
-        </div>
-    </Provider>,
-    document.getElementById('main')
-);
+        </Provider>,
+        document.getElementById('main')
+    );
+} else {
+    const DevTools = require('./containers/DevTools');
+    ReactDOM.render(
+        <Provider store={store} key="provider">
+            <div>
+                <Router routes={routes} history={history} onUpdate={UpdateRoute}/>
+                <DevTools />
+            </div>
+        </Provider>,
+        document.getElementById('main')
+    );
+}
 
 function UpdateRoute() {
     fetchData(store, this.state)

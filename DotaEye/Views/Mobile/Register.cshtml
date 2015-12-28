@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<header class="navigator">
+    <div class="navigator-box">
+        <div class="navigator-left">
+            <a href="javascript:history.go(-1);"></a>
+        </div>
+        <div class="navigator-center">登录</div>
+        <div class="navigator-right"><a href="/register/index" title="免费注册">注册</a></div>
+    </div>
+</header>
+<section id="wrapper">
+    <div id="scroller" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; left: 0px; top: 0px;">
+
+        <nav class="navTop">
+            <ul class="box">
+                <li class="selected">
+                    <a href="javascript:;">密码登录</a>
+                </li>
+                <li>
+                    <a href="/register/codelogin">验证码登录</a>
+                </li>
+            </ul>
+        </nav>
+        <form action="/register/logindo" method="post" id="j-login">
+            <dl class="fbox mini fico">
+                <dt><i class="icon act"></i></dt>
+                <dd>
+                    <input type="tel" name="mobile" class="lg-input j-remember" data-value="" placeholder="请输入注册时的手机号" datatype="m" nullmsg="请输入手机号" errormsg="手机号码格式错误">
+                </dd>
+            </dl>
+            <dl class="fbox mini fico">
+                <dt><i class="icon pwd"></i></dt>
+                <dd>
+                    <input type="password" name="password" class="lg-input j-remember" data-value="" placeholder="请输入登录密码" datatype="*6-20" nullmsg="请输入登录密码" errormsg="密码格式为6-20个字符">
+                </dd>
+            </dl>
+            <div class="login-box">
+                <div class="deal-btn">
+                    <input type="submit" class="btn_submit" id="j-submit" value="登录">
+                </div>
+                <div class="box"><label class="ck pd0 flex1"><input type="checkbox" class="ck" name="remember" value="1">记住我</label><p class="fgt-pw"><a href="/register/forget">忘记密码</a></p></div>
+            </div>
+        </form>
+    </div>
+</section>

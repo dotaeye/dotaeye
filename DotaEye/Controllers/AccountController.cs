@@ -52,7 +52,21 @@ namespace DotaEye.Controllers
             }
         }
 
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [Route("profile")]
+        [HttpGet]
+        public async Task<UserProfile> Profile()
+        {
+            ApplicationUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
 
+            return new UserProfile
+            {
+                Sex = user.Sex.ToString(),
+                Avatar = user.Avatar,
+                Birthday = DateTime.Now,
+                UserId = user.Id
+            };
+        }
 
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
@@ -287,7 +301,7 @@ namespace DotaEye.Controllers
                 ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
                     CookieAuthenticationDefaults.AuthenticationType);
 
-                AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName);
+                AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user);
                 Authentication.SignIn(properties, oAuthIdentity, cookieIdentity);
             }
             else

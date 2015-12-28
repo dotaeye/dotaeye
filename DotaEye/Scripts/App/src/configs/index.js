@@ -4,6 +4,7 @@ let clientConfig = {
     apiRoot: '/api',
     virtualPath: '',
     authToken: 'userAuth',
+    product: false,
     app: {
         title: 'Dotaeye.com',
         description: 'All the modern best practices in one example.',

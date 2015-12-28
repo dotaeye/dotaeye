@@ -7,6 +7,7 @@ import {
     List,
     Login,
     Register,
+    Profile,
     NotFound
 } from './containers';
 
@@ -35,6 +36,8 @@ export default (store) => {
             <Route path='register' component={Register}/>
 
             <Route path='list' component={List} onEnter={requireLogin}/>
+
+            <Route path='profile' component={Profile} onEnter={requireLogin}/>
 
             { /* Catch all route */ }
             <Route path='*' component={NotFound} status={404}/>

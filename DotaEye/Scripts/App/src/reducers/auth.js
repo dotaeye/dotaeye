@@ -1,29 +1,42 @@
 import * as authTypes from '../contants/auth';
 
 const initialState = {
-    loaded: false
 };
 
 export default function auth(state = initialState, action = {}) {
     switch (action.type) {
-        case authTypes.LOAD_SESSION:
+        case authTypes.LOAD_PROFILE:
             return {
                 ...state,
                 loading: true
             };
-        case authTypes.LOAD_SESSION_SUCCESS:
+        case authTypes.LOAD_PROFILE_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                loaded: true,
-                token: action.result
+                profile: action.result
             };
-        case authTypes.LOAD_SESSION_FAIL:
+        case authTypes.LOAD_PROFILE_FAIL:
             return {
                 ...state,
                 loading: false,
-                loaded: false,
                 error: action.error
+            };
+        case authTypes.SAVE_PROFILE:
+            return {
+                ...state,
+                loading: true
+            };
+        case authTypes.SAVE_PROFILE_SUCCESS:
+            return {
+                ...state,
+                loading: false
+            };
+        case authTypes.SAVE_PROFILE_FAIL:
+            return {
+                ...state,
+                loading: false,
+                saveProfileError: action.error
             };
         case authTypes.LOAD_AUTH_TOKEN:
             let token = action.result;
@@ -35,7 +48,6 @@ export default function auth(state = initialState, action = {}) {
             return {
                 ...state,
                 loading: false,
-                loaded: true,
                 token: token
             };
         case authTypes.REGISTER:

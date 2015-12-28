@@ -34,12 +34,14 @@ module.exports = function (grunt) {
         less: {
             dev: {
                 files: {
-                    './src/public/styles/main.css': './src/public/styles/main.less'
+                    './src/public/styles/main.css': './src/public/styles/main.less',
+                    './src/public/styles/mobile.css': './src/public/styles/mobile.less'
                 }
             },
             prod: {
                 files: {
-                    './src/public/styles/main.css': './src/public/styles/main.less'
+                    './src/public/styles/main.css': './src/public/styles/main.less',
+                    './src/public/styles/mobile.css': './src/public/styles/mobile.less'
                 },
                 options: {
                     compress: true
