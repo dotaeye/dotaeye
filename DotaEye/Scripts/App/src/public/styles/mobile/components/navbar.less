@@ -1,4 +1,4 @@
-.navigator {
+.navbar {
   height: .88rem;
   line-height: .88rem;
   background: #f7f7f7;
@@ -16,6 +16,21 @@
       position: relative;
       display: block;
       color: #666;
+    }
+    &.back{
+      a:after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        width: .2rem;
+        height: .2rem;
+        border-top: 2px solid #c80000;
+        border-left: 2px solid #c80000;
+        .transform(translateY(-100%) translateX(100%) rotateZ(-45deg));
+        margin-top: .15rem;
+      }
     }
   }
 

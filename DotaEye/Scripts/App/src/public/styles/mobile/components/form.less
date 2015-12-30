@@ -1,0 +1,104 @@
+.form-group {
+  display: table;
+  width: 100%;
+  background: #fff;
+  padding: 0 .2rem;
+
+  &-submit{
+    background: none;
+  }
+
+  &-label{
+    position: relative;
+    border-bottom: .02rem solid #ececec;
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+    padding: .2rem .1rem;
+    width: 5em;
+    &.icon{
+      width: 3em;
+    }
+    &:after{
+      content: " ";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      height: .4rem;
+      width: 1px;
+      margin-top: -.2rem;
+      background: #d9d9d9;
+    }
+  }
+  .form-control{
+    display: table-cell;
+    vertical-align: middle;
+    padding: .2rem .1rem;
+    border-bottom: .02rem solid #ececec;
+    text-align: left;
+    position: relative;
+
+    &.form-control-submit{
+      padding-top: .3rem;
+      padding-bottom: .3rem;
+    }
+
+    &.form-control-sms{
+
+    }
+
+    &-input{
+      &.large{
+        width: 100%;
+        .display-box();
+        background: none;
+        border: none;
+        padding: .15rem .1rem;
+        outline: none;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+.form-group-padding{
+  padding: 0 .2rem;
+}
+
+.form-control-checkbox[type=radio], .form-control-checkbox[type=checkbox] {
+  -webkit-appearance: none;
+  width: .32rem;
+  height: .32rem;
+  margin: 0;
+  margin-top: -3px;
+  border-radius: 50%;
+  border: 1px solid #b2b2b2;
+  text-align: center;
+  vertical-align: middle;
+  line-height: .32rem;
+  outline: 0;
+
+  &:checked{
+    background-color: #D7000F;
+    border: 0;
+    color: #fff;
+    position: relative;
+  }
+}
+.form-control-checkbox[type=checkbox] {
+  margin-right: .1rem;
+  &:after{
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    content: "";
+    height: 0.2rem;
+    left: 30%;
+    position: absolute;
+    top: 0;
+    .transform(rotate(45deg));
+    width: 0.1rem;
+  }
+}
+
+

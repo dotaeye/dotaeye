@@ -1,0 +1,40 @@
+.tab {
+  &-bar {
+    .display-box();
+    background: #fff;
+    margin-left: -1px;
+    width: 100%;
+    li {
+      .box-flex(1);
+      text-align: center;
+      border-bottom: .04rem solid #BEC2C8;
+      border-left: 1px solid #BEC2C8;
+
+      a {
+        display: block;
+        padding: .2rem;
+      }
+
+      &.selected {
+        border-bottom-color: #c80000;
+
+        a{
+          color: #c80000;
+        }
+      }
+    }
+  }
+
+  &-content{
+    &-item{
+      width: 100%;
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      &.selected{
+        height: auto;
+        overflow: initial;
+      }
+    }
+  }
+}
