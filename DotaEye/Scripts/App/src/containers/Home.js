@@ -6,7 +6,10 @@ export default class Home extends Component {
     render() {
         return (
             <div id="home" className='container' >
+
                 <h1>Home Page</h1>
+                <Link to='/login'>Login page</Link>
+                <Link to='/Register'>Register page</Link>
             </div>
         );
     }

@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup  from 'react-addons-css-transition-group'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { History } from 'react-router'
+import { History,Link } from 'react-router'
 import { IndexLink } from 'react-router';
 import DocumentMeta from 'react-document-meta';
 import configs from '../configs';
 import * as authActions from '../actions/auth'
+
 
 var App = React.createClass({
 
@@ -27,10 +29,26 @@ var App = React.createClass({
 
     render() {
         const {auth:{token}} = this.props;
+
+        const child = React.cloneElement(this.props.children, {key: new Date().getTime()});
+
+
+        const animate = child.type.animate;
+        const disabledAnimate = !this.prevAnimate || animate == this.prevAnimate;
+
+        this.prevAnimate = animate;
+
         return (
             <div id="app">
                 <DocumentMeta {...configs.app}/>
-                {this.props.children}
+                <ReactCSSTransitionGroup transitionName={animate}
+                                         transitionEnter={!disabledAnimate}
+                                         transitionLeave={!disabledAnimate}
+                                         transitionEnterTimeout={1500}
+                                         transitionLeaveTimeout={1500}
+                                         component='div'>
+                    {child}
+                </ReactCSSTransitionGroup>
             </div>
         );
     }

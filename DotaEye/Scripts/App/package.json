@@ -15,19 +15,17 @@
     "immutable": "^3.7.5",
     "lodash": "^3.10.1",
     "object-assign": "^3.0.0",
-    "react": "^0.14.0",
+    "react": "^0.14.5",
     "react-bootstrap": "^0.28.1",
     "react-document-meta": "^2.0.0",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.2",
-    "react-router-bootstrap": "^0.19.3",
     "redux": "^3.0.4",
     "redux-form": "^3.0.9",
     "redux-logger": "^2.3.1",
-    "redux-router": "^1.0.0-beta5",
-    "redux-simple-router": "^1.0.1",
-    "superagent": "^1.2.0"
+    "superagent": "^1.2.0",
+    "touchstonejs": "^0.7.3"
   },
   "devDependencies": {
     "babel-core": "~5.8.33",

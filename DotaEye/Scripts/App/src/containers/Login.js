@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { Route, Link} from 'react-router';
 import { connect } from 'react-redux'
 import { Spin } from 'antd';
 import * as actionCreators from '../actions/auth'
 import { LoginForm } from '../components';
+import connectStatic from '../utils/connectStatic'
 
 
 const Login = React.createClass({
 
+    static:{
+        animate:'example1'
+    },
 
     onSubmit(data){
         data.grant_type = 'password';
@@ -21,6 +26,8 @@ const Login = React.createClass({
         return (
             <div id="login" className='container'>
                 <h1>Login Page</h1>
+                <Link to='/login'>Login page</Link>
+                <Link to='/Register'>Register page</Link>
                 <LoginForm onSubmit={this.onSubmit} submitting={loggingIn} ref='loginForm'/>
             </div>
         );
@@ -38,6 +45,9 @@ function mapDispatchToProps(dispatch) {
     return {actions: bindActionCreators(actionCreators, dispatch)}
 }
 
+var statics = {
+    animate: 'left'
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connectStatic(statics)(connect(mapStateToProps, mapDispatchToProps)(Login))
 

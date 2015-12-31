@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { Spin } from 'antd';
-import connectData from '../utils/connectData'
+import connectStatic from '../utils/connectStatic'
 import * as authActions from '../actions/auth'
 import { ProfileForm } from '../components';
 
@@ -47,5 +47,5 @@ function fetchData(dispatch, getState, params, query) {
 }
 
 
-export default connectData(fetchData)(connect(mapStateToProps, mapDispatchToProps)(Profile))
+export default connectStatic({fetchData})(connect(mapStateToProps, mapDispatchToProps)(Profile))
 
