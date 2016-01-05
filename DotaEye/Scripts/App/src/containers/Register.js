@@ -22,8 +22,6 @@ const Register = React.createClass({
         return (
             <div id="register" className='container'>
                 <h1>Register Page</h1>
-                <Link to='/login'>Login page</Link>
-                <Link to='/Register'>Register page</Link>
                 <RegisterForm onSubmit={this.onSubmit} submitting={registering} formError={registerError}
                               ref='registerForm'/>
             </div>
@@ -42,9 +40,5 @@ function mapDispatchToProps(dispatch) {
     return {actions: bindActionCreators(actionCreators, dispatch)}
 }
 
-var statics = {
-    animate: 'right'
-};
-
-export default connectStatic(statics)(connect(mapStateToProps, mapDispatchToProps)(Register))
+export default connect(mapStateToProps, mapDispatchToProps)(Register)
 

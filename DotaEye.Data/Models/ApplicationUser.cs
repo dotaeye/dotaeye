@@ -23,5 +23,9 @@ namespace DotaEye.Data.Models
         public string PhonePrefix { get; set; }
 
         public virtual ICollection<UserActivities> UserActivities { get; set; }
+
+        public virtual ICollection<Blog> Blog { get; set; }
+
+        public virtual ICollection<BlogType> BlogType { get; set; }
     }
 }

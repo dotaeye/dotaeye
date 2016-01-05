@@ -36,7 +36,7 @@ store.dispatch(loadAuthToken(token))
 
 const routes = createRoutes(store);
 
-if (configs.product) {
+if (true) {
     window.React = React; // enable debugger
     ReactDOM.render(
         <Provider store={store} key="provider">

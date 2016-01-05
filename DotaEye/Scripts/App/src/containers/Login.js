@@ -26,8 +26,6 @@ const Login = React.createClass({
         return (
             <div id="login" className='container'>
                 <h1>Login Page</h1>
-                <Link to='/login'>Login page</Link>
-                <Link to='/Register'>Register page</Link>
                 <LoginForm onSubmit={this.onSubmit} submitting={loggingIn} ref='loginForm'/>
             </div>
         );
@@ -45,9 +43,5 @@ function mapDispatchToProps(dispatch) {
     return {actions: bindActionCreators(actionCreators, dispatch)}
 }
 
-var statics = {
-    animate: 'left'
-};
-
-export default connectStatic(statics)(connect(mapStateToProps, mapDispatchToProps)(Login))
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
